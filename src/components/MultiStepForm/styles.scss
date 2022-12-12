@@ -1,0 +1,89 @@
+.multiStepForm {
+	background-color: var(--neutral-100);
+	width: min(100%, 1200px);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	display: grid;
+	grid-template-columns: 350px 1fr;
+	height: min(90%, 700px);
+	box-shadow: 10px 10px 80px -10px rgba(0, 0, 0, 0.103);
+	overflow: hidden;
+
+	.steps {
+		padding: 3rem;
+		border-radius: inherit;
+		background: url("../../assets/bg-sidebar-desktop.svg") no-repeat center / cover;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		overflow: auto;
+	}
+
+	.content {
+		padding: 4rem 4rem 2rem;
+		max-width: 700px;
+		width: 100%;
+		justify-self: center;
+		display: flex;
+		flex-direction: column;
+
+		.btns {
+			margin-top: auto;
+			display: flex;
+
+			button:not(.goBack) {
+				color: white;
+				margin-left: auto;
+				font-weight: 400;
+
+				&.next {
+					background-color: var(--primary-800);
+				}
+				&.submit {
+					background-color: var(--primary-400);
+				}
+			}
+		}
+	}
+}
+
+.step {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	cursor: pointer;
+
+	.index {
+		width: 2rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		color: var(--primary-200);
+		border: 1px solid;
+	}
+
+	&.active .index {
+		border: 2px solid;
+		background-color: var(--primary-200);
+		color: var(--primary-800);
+		border-color: var(--primary-200);
+	}
+
+	.title {
+		p {
+			color: var(--neutral-300);
+			margin-bottom: 0.25rem;
+			font-size: 0.9rem;
+		}
+		h3 {
+			color: var(--white);
+		}
+	}
+}
+
+.form {
+	p {
+		margin-bottom: 2.5rem;
+	}
+}

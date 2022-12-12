@@ -9,5 +9,41 @@
 
 :root {
 	font-family: "Ubuntu", sans-serif;
-	font-weight: 1rem;
+	--primary-800: hsl(213, 96%, 18%);
+	--primary-400: hsl(243, 100%, 62%);
+	--primary-300: hsl(228, 100%, 84%);
+	--primary-200: hsl(206, 94%, 87%);
+	--secondary-400: hsl(354, 84%, 57%);
+	--neutral-400: hsl(231, 11%, 63%);
+	--neutral-300: hsl(229, 24%, 87%);
+	--neutral-200: hsl(217, 100%, 97%);
+	--neutral-100: hsl(231, 100%, 99%);
+	--white: hsl(0, 0%, 100%);
+}
+
+p {
+	font-weight: 400;
+	color: var(--neutral-400);
+}
+
+h2 {
+	font-size: 2rem;
+	color: var(--primary-800);
+	margin-bottom: 0.25em;
+}
+
+h3 {
+	font-size: 1.1rem;
+}
+
+button {
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	font-weight: 500;
+	font-family: inherit;
+	font-size: 1rem;
+	cursor: pointer;
+	background: none;
+	color: var(--neutral-400);
 }
