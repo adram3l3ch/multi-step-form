@@ -6,9 +6,7 @@ import { ChangeEvent, useEffect } from "react";
 import Toggle from "../Toggle";
 import { billingPlans } from "../../data";
 import "./styles.scss";
-
-type Billing = "Yearly" | "Monthly";
-type Plans = "arcade" | "advanced" | "pro";
+import { Billing, Plans } from "../MultiStepForm/types";
 
 const Plan = (props: ComponentPropsType) => {
 	const { data, setData } = props;
@@ -18,17 +16,11 @@ const Plan = (props: ComponentPropsType) => {
 		setData(ps => ({ ...ps, plan: id }));
 	};
 
-	useEffect(() => {
-		if (!data.plan) {
-			setData(ps => ({ ...ps, plan: "arcade" }));
-		}
-	}, []);
-
 	const images = [arcade, advanced, pro];
 
 	const plans = ["arcade", "advanced", "pro"].map((ele, i: number) => {
 		return (
-			<div className="plan">
+			<div className="plan" key={ele}>
 				<input
 					type="radio"
 					id={ele}

@@ -1,0 +1,32 @@
+.addons {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.addon {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 1.5rem;
+	border: 1px solid var(--neutral-300);
+	border-radius: 0.5rem;
+	cursor: pointer;
+
+	.price {
+		margin-left: auto;
+		color: var(--primary-400);
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	input[type="checkbox"] {
+		accent-color: var(--primary-400);
+		width: 1.2rem;
+		aspect-ratio: 1;
+		cursor: pointer;
+		pointer-events: none;
+	}
+}

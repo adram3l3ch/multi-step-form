@@ -22,12 +22,6 @@ const Toggle = (props: TogglePropTypes) => {
 		}
 	});
 
-	useEffect(() => {
-		if (!data[name]) {
-			setData(ps => ({ ...ps, [name]: values[0] }));
-		}
-	}, []);
-
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const { checked } = e.target;
 		setData(ps => ({ ...ps, [name]: values[checked ? 1 : 0] }));
@@ -37,7 +31,7 @@ const Toggle = (props: TogglePropTypes) => {
 		<div className="toggle">
 			<h5 className={data[name] === values[0] ? "active" : ""}>{labels[0]}</h5>
 			<input type="checkbox" id={name} checked={data[name] === values[1]} onChange={handleChange} />
-			<label htmlFor={name}></label>
+			<label htmlFor={name} tabIndex={0}></label>
 			<h5 className={data[name] === values[1] ? "active" : ""}>{labels[1]}</h5>
 		</div>
 	);

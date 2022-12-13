@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 import { ComponentPropsType } from "../../types";
 
 const Info = (props: ComponentPropsType) => {
-	const { data, setData } = props;
+	const { data, setData, errors } = props;
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const { value, name } = e.target;
@@ -25,17 +25,19 @@ const Info = (props: ComponentPropsType) => {
 					name="name"
 					id="name"
 				/>
+				{errors.name && <p className="error">{errors.name}</p>}
 			</div>
 			<div className="input__group">
 				<label htmlFor="email">Email Address</label>
 				<input
-					type="email"
+					type="text"
 					placeholder="e.g. Stephenking@lorem.com"
 					value={data.email || ""}
 					onChange={handleChange}
 					name="email"
 					id="email"
 				/>
+				{errors.email && <p className="error">{errors.email}</p>}
 			</div>
 			<div className="input__group">
 				<label htmlFor="phone">Phone Number</label>
@@ -47,6 +49,7 @@ const Info = (props: ComponentPropsType) => {
 					name="phone"
 					id="phone"
 				/>
+				{errors.phone && <p className="error">{errors.phone}</p>}
 			</div>
 		</form>
 	);

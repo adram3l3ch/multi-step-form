@@ -1,25 +1,12 @@
-import Info from "./components/Info";
 import MultiStepForm from "./components/MultiStepForm";
-import { Step } from "./components/MultiStepForm/types";
-import Plan from "./components/Plan";
+import { steps } from "./steps";
 import { ObjectType } from "./types";
 
-const steps: Step[] = [
-	{
-		title: "YOUR INFO",
-		Component: Info,
-	},
-	{
-		title: "SELECT PLAN",
-		Component: Plan,
-	},
-	{
-		title: "ADD-ONS",
-	},
-	{
-		title: "SUMMARY",
-	},
-];
+const initialValue = {
+	plan: "arcade",
+	billing: "Monthly",
+	addons: [],
+};
 
 function App() {
 	const handleSubmit = (data: ObjectType) => {
@@ -27,7 +14,7 @@ function App() {
 	};
 	return (
 		<div className="container">
-			<MultiStepForm steps={steps} handleSubmit={handleSubmit} />
+			<MultiStepForm steps={steps} handleSubmit={handleSubmit} initialValue={initialValue} />
 		</div>
 	);
 }
