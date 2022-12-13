@@ -1,6 +1,7 @@
 import Info from "./components/Info";
 import MultiStepForm from "./components/MultiStepForm";
 import { Step } from "./components/MultiStepForm/types";
+import Plan from "./components/Plan";
 import { ObjectType } from "./types";
 
 const steps: Step[] = [
@@ -10,6 +11,7 @@ const steps: Step[] = [
 	},
 	{
 		title: "SELECT PLAN",
+		Component: Plan,
 	},
 	{
 		title: "ADD-ONS",

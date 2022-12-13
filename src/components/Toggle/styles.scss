@@ -1,0 +1,43 @@
+.toggle {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	input[type="checkbox"] {
+		display: none;
+	}
+
+	h5:not(.active) {
+		color: var(--neutral-400);
+	}
+
+	input[type="checkbox"] + label {
+		--padding: 0.25em;
+		--width: 3rem;
+		width: var(--width);
+		aspect-ratio: 2;
+		display: block;
+		background-color: var(--primary-800);
+		border-radius: 100vmax;
+		position: relative;
+		cursor: pointer;
+
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: var(--white);
+			top: var(--padding);
+			bottom: var(--padding);
+			left: var(--padding);
+			aspect-ratio: 1;
+			border-radius: 50%;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	input[type="checkbox"]:checked + label {
+		&::after {
+			translate: calc(var(--width) - 100% - var(--padding) * 2);
+		}
+	}
+}

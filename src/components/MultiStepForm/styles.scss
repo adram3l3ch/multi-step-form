@@ -20,16 +20,23 @@
 	}
 
 	.content {
-		padding: 4rem 4rem 2rem;
+		padding: 4rem 2rem 2rem;
 		max-width: 700px;
 		width: 100%;
 		justify-self: center;
 		display: flex;
 		flex-direction: column;
+		gap: 2rem;
+		overflow: hidden;
+
+		> :not(.btns) {
+			flex: 1;
+			overflow: auto;
+		}
 
 		.btns {
-			margin-top: auto;
 			display: flex;
+			margin-top: auto;
 
 			button:not(.goBack) {
 				color: white;
@@ -54,13 +61,14 @@
 	cursor: pointer;
 
 	.index {
-		width: 2rem;
+		width: 2.5rem;
 		aspect-ratio: 1;
 		border-radius: 50%;
 		display: grid;
 		place-items: center;
 		color: var(--primary-200);
 		border: 1px solid;
+		transition: all 0.2s ease-in-out;
 	}
 
 	&.active .index {
@@ -83,7 +91,7 @@
 }
 
 .form {
-	p {
+	> p {
 		margin-bottom: 2.5rem;
 	}
 }

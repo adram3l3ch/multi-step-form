@@ -5,8 +5,7 @@ const Info = (props: ComponentPropsType) => {
 	const { data, setData } = props;
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const value = e.target.value;
-		const name = e.target.name as "name" | "email" | "phone";
+		const { value, name } = e.target;
 		const _data = { ...data };
 		_data[name] = value;
 		setData(_data);
