@@ -45,8 +45,8 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 
 	return (
 		<div className="multiStepForm">
-			<div className="steps custom__scrollbar">{stepsElement}</div>
-			<section className="content">
+			<aside className="steps custom__scrollbar">{stepsElement}</aside>
+			<div className="content">
 				{hasSubmitted ? (
 					<div className="step__component custom__scrollbar">
 						<SuccessPage
@@ -80,7 +80,7 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 						</div>
 					</>
 				)}
-			</section>
+			</div>
 		</div>
 	);
 };

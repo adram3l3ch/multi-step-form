@@ -13,14 +13,14 @@ function App() {
 		console.log(data);
 	};
 	return (
-		<div className="container">
+		<main className="container">
 			<MultiStepForm
 				steps={steps}
 				handleSubmit={handleSubmit}
 				initialValue={initialValue}
 				SuccessPage={SuccessPage}
 			/>
-		</div>
+		</main>
 	);
 }
 
