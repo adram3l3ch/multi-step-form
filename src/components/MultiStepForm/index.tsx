@@ -45,7 +45,7 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 
 	return (
 		<div className="multiStepForm">
-			<div className="steps">{stepsElement}</div>
+			<div className="steps custom__scrollbar">{stepsElement}</div>
 			<section className="content">
 				{hasSubmitted ? (
 					<SuccessPage
@@ -57,13 +57,15 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 					/>
 				) : (
 					<>
-						<Component
-							setData={setMultiFormData}
-							data={multiStepFormData}
-							errors={errors}
-							currentStep={currentStep}
-							setCurrentStep={setCurrentStep}
-						/>
+						<div className="step__component custom__scrollbar">
+							<Component
+								setData={setMultiFormData}
+								data={multiStepFormData}
+								errors={errors}
+								currentStep={currentStep}
+								setCurrentStep={setCurrentStep}
+							/>
+						</div>
 						<div className="btns">
 							{isFirstStep || (
 								<button className="goBack" onClick={() => handleNextPrev(-1)}>

@@ -26,10 +26,10 @@
 		justify-self: center;
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
 		overflow: hidden;
+		gap: 2rem;
 
-		> :not(.btns) {
+		.step__component {
 			flex: 1;
 			overflow: auto;
 		}
