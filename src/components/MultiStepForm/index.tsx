@@ -31,17 +31,14 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 
 	const onSubmit = () => {
 		handleSubmit?.(multiStepFormData);
+		reset();
 	};
 
-	const {
-		errors,
-		onSubmit: _onSubmit,
-		reset,
-	} = useValidation(
-		multiStepFormData,
-		currentStep === steps.length - 1 ? onSubmit : () => handleNextPrev(1),
-		() => setCurrentStep(0)
-	);
+	const isLastStep = currentStep === steps.length - 1;
+	const submitFn = isLastStep ? onSubmit : () => handleNextPrev(1);
+	const errFn = () => setCurrentStep(0);
+
+	const { errors, onSubmit: _onSubmit, reset } = useValidation(multiStepFormData, submitFn, errFn);
 
 	return (
 		<div className="multiStepForm">
@@ -56,15 +53,9 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 							Go Back
 						</button>
 					)}
-					{currentStep === steps.length - 1 ? (
-						<button className="submit" onClick={_onSubmit}>
-							Confirm
-						</button>
-					) : (
-						<button className="next" onClick={_onSubmit}>
-							Next Step
-						</button>
-					)}
+					<button className={isLastStep ? "submit" : "next"} onClick={_onSubmit}>
+						{isLastStep ? "Confirm" : "Next Step"}
+					</button>
 				</div>
 			</section>
 		</div>

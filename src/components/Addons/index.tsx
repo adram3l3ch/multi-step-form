@@ -20,7 +20,11 @@ const AddOns = (props: ComponentPropsType) => {
 			<p>Add-ons help to enhance your gaming experience.</p>
 			<div className="addons">
 				{addons.map(addon => (
-					<div className="addon" onClick={() => handleClick(addon.title)} key={addon.title}>
+					<div
+						className={data.addons.includes(addon.title) ? "addon active" : "addon"}
+						onClick={() => handleClick(addon.title)}
+						key={addon.title}
+					>
 						<input
 							type="checkbox"
 							checked={data.addons.includes(addon.title)}

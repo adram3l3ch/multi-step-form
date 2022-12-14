@@ -12,6 +12,12 @@
 	border: 1px solid var(--neutral-300);
 	border-radius: 0.5rem;
 	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+
+	&.active {
+		background-color: var(--neutral-200);
+		border-color: var(--primary-400);
+	}
 
 	.price {
 		margin-left: auto;
