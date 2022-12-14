@@ -47,7 +47,7 @@ const Summary = (props: ComponentPropsType) => {
 			<div className="summary__total">
 				<p>Total (per {billing === "Monthly" ? "month" : "year"})</p>
 				<p className="price">
-					+${totalPrice}/{billingText}
+					${totalPrice}/{billingText}
 				</p>
 			</div>
 		</section>

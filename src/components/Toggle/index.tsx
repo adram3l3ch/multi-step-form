@@ -1,5 +1,5 @@
-import { ChangeEvent, useEffect } from "react";
-import { ComponentPropsType } from "../../types";
+import { ChangeEvent } from "react";
+import { ObjectType } from "../../types";
 import "./styles.scss";
 
 type OptionType = string | { label: string; value: string };
@@ -7,7 +7,9 @@ type OptionType = string | { label: string; value: string };
 type TogglePropTypes = {
 	options: [OptionType, OptionType];
 	name: string;
-} & ComponentPropsType;
+	data: ObjectType;
+	setData: React.Dispatch<React.SetStateAction<ObjectType>>;
+};
 
 const Toggle = (props: TogglePropTypes) => {
 	const { name, options, data, setData } = props;

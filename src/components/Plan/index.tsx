@@ -2,7 +2,7 @@ import { ComponentPropsType } from "../../types";
 import arcade from "../../assets/icon-arcade.svg";
 import advanced from "../../assets/icon-advanced.svg";
 import pro from "../../assets/icon-pro.svg";
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent } from "react";
 import Toggle from "../Toggle";
 import { billingPlans } from "../../data";
 import "./styles.scss";
@@ -30,12 +30,14 @@ const Plan = (props: ComponentPropsType) => {
 				/>
 				<label htmlFor={ele} tabIndex={0}>
 					<img src={images[i]} alt={ele} />
-					<h4>{ele}</h4>
-					<p>
-						${billingPlans[data.billing as Billing]?.[ele as Plans]}/
-						{data.billing === "Monthly" ? "mo" : "yr"}
-					</p>
-					{data.billing === "Yearly" && <p>2 months free</p>}
+					<div className="details">
+						<h4>{ele}</h4>
+						<p>
+							${billingPlans[data.billing as Billing]?.[ele as Plans]}/
+							{data.billing === "Monthly" ? "mo" : "yr"}
+						</p>
+						{data.billing === "Yearly" && <p>2 months free</p>}
+					</div>
 				</label>
 			</div>
 		);
