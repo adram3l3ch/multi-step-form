@@ -14,6 +14,7 @@ function App() {
 	};
 	return (
 		<main className="container">
+			<h1 className="sr-only">Multi Step Form</h1>
 			<MultiStepForm
 				steps={steps}
 				handleSubmit={handleSubmit}
