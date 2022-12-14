@@ -11,7 +11,7 @@ type useValidationReturnType = {
 type useValidationType = (
 	data: ObjectType,
 	handleSubmit: () => void,
-	onError: () => void
+	onError?: () => void
 ) => useValidationReturnType;
 
 const useValidation: useValidationType = (data, handleSubmit, onError) => {
@@ -19,7 +19,7 @@ const useValidation: useValidationType = (data, handleSubmit, onError) => {
 	const [touched, setTouched] = useState(false);
 	const [submitting, setSubmitting] = useState(false);
 
-	const onSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+	const onSubmit = (e: MouseEvent<HTMLButtonElement> | SubmitEvent) => {
 		setTouched(true);
 		setSubmitting(true);
 	};
@@ -42,7 +42,7 @@ const useValidation: useValidationType = (data, handleSubmit, onError) => {
 			const errors = {} as ObjectType;
 			err.inner.forEach((error: ObjectType) => (errors[error.path] = error.message));
 			setErrors(errors);
-			submitting && onError();
+			submitting && onError?.();
 		}
 		//eslint-disable-next-line
 	}, [data, touched, submitting]);

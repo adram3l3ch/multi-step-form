@@ -2,7 +2,7 @@ import AddOns from "./components/Addons";
 import Info from "./components/Info";
 import { Step } from "./components/MultiStepForm/types";
 import Plan from "./components/Plan";
-import * as Yup from "yup";
+import Summary from "./components/Summary";
 
 export const steps: Step[] = [
 	{
@@ -19,5 +19,6 @@ export const steps: Step[] = [
 	},
 	{
 		title: "SUMMARY",
+		Component: Summary,
 	},
 ];

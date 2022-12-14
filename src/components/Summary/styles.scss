@@ -1,0 +1,53 @@
+.summary__details {
+	background-color: var(--neutral-200);
+	padding: 2rem;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+
+	.summary__detail {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h3 {
+			text-transform: capitalize;
+			font-weight: 500;
+		}
+
+		button {
+			padding: 0;
+			font-weight: 400;
+			text-decoration: underline;
+		}
+
+		.price {
+			color: var(--primary-800);
+			font-weight: 500;
+		}
+
+		&.main {
+			border-bottom: 1px solid var(--neutral-300);
+			padding-bottom: 2rem;
+			.price {
+				font-weight: 800;
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+
+.summary__total {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 2rem;
+
+	.price {
+		color: var(--primary-400);
+		font-weight: 800;
+		font-size: 1.3rem;
+	}
+}

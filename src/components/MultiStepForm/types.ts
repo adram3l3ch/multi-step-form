@@ -9,7 +9,7 @@ export type MultiStepFormPropsType = {
 
 export type Step = {
 	title: string;
-	Component?: (props: ComponentPropsType) => JSX.Element;
+	Component: (props: ComponentPropsType) => JSX.Element;
 };
 
 export type Billing = "Yearly" | "Monthly";
