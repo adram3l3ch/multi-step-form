@@ -4,9 +4,10 @@ import useValidation from "../../hooks/useValidation";
 import "./styles.scss";
 
 const MultiStepForm = (props: MultiStepFormPropsType) => {
-	const { steps, handleSubmit, initialValue } = props;
+	const { steps, handleSubmit, initialValue, SuccessPage } = props;
 	const [currentStep, setCurrentStep] = useState(0);
 	const [multiStepFormData, setMultiFormData] = useState(initialValue || {});
+	const [hasSubmitted, setHasSubmitted] = useState(false);
 
 	const handleNextPrev = (val: -1 | 1) => {
 		setCurrentStep(ps => ps + val);
@@ -14,7 +15,9 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 	};
 
 	const onSubmit = () => {
+		setHasSubmitted(true);
 		handleSubmit?.(multiStepFormData);
+		setMultiFormData(initialValue);
 		reset();
 	};
 
@@ -44,23 +47,35 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 		<div className="multiStepForm">
 			<div className="steps">{stepsElement}</div>
 			<section className="content">
-				<Component
-					setData={setMultiFormData}
-					data={multiStepFormData}
-					errors={errors}
-					currentStep={currentStep}
-					setCurrentStep={setCurrentStep}
-				/>
-				<div className="btns">
-					{isFirstStep || (
-						<button className="goBack" onClick={() => handleNextPrev(-1)}>
-							Go Back
-						</button>
-					)}
-					<button className={isLastStep ? "submit" : "next"} onClick={_onSubmit}>
-						{isLastStep ? "Confirm" : "Next Step"}
-					</button>
-				</div>
+				{hasSubmitted ? (
+					<SuccessPage
+						setData={setMultiFormData}
+						data={multiStepFormData}
+						errors={errors}
+						currentStep={currentStep}
+						setCurrentStep={setCurrentStep}
+					/>
+				) : (
+					<>
+						<Component
+							setData={setMultiFormData}
+							data={multiStepFormData}
+							errors={errors}
+							currentStep={currentStep}
+							setCurrentStep={setCurrentStep}
+						/>
+						<div className="btns">
+							{isFirstStep || (
+								<button className="goBack" onClick={() => handleNextPrev(-1)}>
+									Go Back
+								</button>
+							)}
+							<button className={isLastStep ? "submit" : "next"} onClick={_onSubmit}>
+								{isLastStep ? "Confirm" : "Next Step"}
+							</button>
+						</div>
+					</>
+				)}
 			</section>
 		</div>
 	);

@@ -1,10 +1,10 @@
 import { ComponentPropsType, ObjectType } from "../../types";
-import * as Yup from "yup";
 
 export type MultiStepFormPropsType = {
 	steps: Step[];
 	handleSubmit?: (params: ObjectType) => void;
 	initialValue: ObjectType;
+	SuccessPage: (props: ComponentPropsType) => JSX.Element;
 };
 
 export type Step = {

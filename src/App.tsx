@@ -1,5 +1,5 @@
 import MultiStepForm from "./components/MultiStepForm";
-import { steps } from "./steps";
+import { steps, SuccessPage } from "./steps";
 import { ObjectType } from "./types";
 
 const initialValue = {
@@ -14,7 +14,12 @@ function App() {
 	};
 	return (
 		<div className="container">
-			<MultiStepForm steps={steps} handleSubmit={handleSubmit} initialValue={initialValue} />
+			<MultiStepForm
+				steps={steps}
+				handleSubmit={handleSubmit}
+				initialValue={initialValue}
+				SuccessPage={SuccessPage}
+			/>
 		</div>
 	);
 }

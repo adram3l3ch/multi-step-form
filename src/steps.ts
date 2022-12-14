@@ -2,6 +2,7 @@ import AddOns from "./components/Addons";
 import Info from "./components/Info";
 import { Step } from "./components/MultiStepForm/types";
 import Plan from "./components/Plan";
+import Success from "./components/Sucess";
 import Summary from "./components/Summary";
 
 export const steps: Step[] = [
@@ -22,3 +23,5 @@ export const steps: Step[] = [
 		Component: Summary,
 	},
 ];
+
+export const SuccessPage = Success;
