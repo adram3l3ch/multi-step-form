@@ -35,6 +35,15 @@
 		border-radius: 0.5rem;
 		background-color: var(--neutral-100);
 		outline: none;
+		font-weight: 500;
+
+		&::placeholder {
+			color: var(--neutral-400);
+		}
+
+		&:focus {
+			border-color: var(--primary-400);
+		}
 	}
 
 	&:has(.error) input {
@@ -42,6 +51,9 @@
 	}
 
 	.error {
+		position: absolute;
+		font-weight: 500;
+		right: 0;
 		font-size: 0.8rem;
 		color: rgb(216, 32, 32);
 		margin-left: 0.25rem;

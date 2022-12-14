@@ -30,7 +30,7 @@ const Summary = (props: ComponentPropsType) => {
 		<section className="summary">
 			<h2>Finishing up</h2>
 			<p>Double-check everything looks OK before confirming.</p>
-			<div className="summary__details">
+			<div className={data.addons.length ? "summary__details summary__addons" : "summary__details"}>
 				<div className="summary__detail main">
 					<div className="title">
 						<h3>

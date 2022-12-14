@@ -17,17 +17,23 @@
 		label {
 			padding: 1rem;
 			border-radius: 0.5rem;
-			height: 11rem;
 			display: flex;
 			flex-direction: column;
 			border: 1px solid var(--neutral-300);
 			cursor: pointer;
 			transition: all 0.2s ease-in-out;
 
+			&:hover,
+			&:focus {
+				border-color: var(--primary-400);
+				outline: none;
+			}
+
 			img {
 				width: 40px;
 				aspect-ratio: 1;
 				object-fit: cover;
+				margin-bottom: 4rem;
 			}
 			h4 {
 				margin-top: auto;
