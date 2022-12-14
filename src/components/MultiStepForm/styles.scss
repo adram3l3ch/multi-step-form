@@ -63,13 +63,13 @@
 	align-items: flex-start;
 	gap: 1rem;
 	cursor: pointer;
+	height: max-content;
 
 	.index {
 		width: 2.5rem;
 		aspect-ratio: 1;
 		border-radius: 50%;
 		display: grid;
-		height: max-content;
 		place-items: center;
 		color: var(--primary-200);
 		border: 1px solid;
@@ -129,13 +129,19 @@
 		.steps {
 			padding: 2rem 1rem;
 			flex-direction: row;
-			justify-content: center;
 			background-image: url("../../assets/bg-sidebar-mobile.svg");
 			position: absolute;
 			width: 100%;
 			top: 0;
 			height: 250px;
 			z-index: -1;
+
+			.step:first-child {
+				margin-left: auto;
+			}
+			.step:last-child {
+				margin-right: auto;
+			}
 
 			.step *:not(.index) {
 				display: none;
