@@ -48,13 +48,15 @@ const MultiStepForm = (props: MultiStepFormPropsType) => {
 			<div className="steps custom__scrollbar">{stepsElement}</div>
 			<section className="content">
 				{hasSubmitted ? (
-					<SuccessPage
-						setData={setMultiFormData}
-						data={multiStepFormData}
-						errors={errors}
-						currentStep={currentStep}
-						setCurrentStep={setCurrentStep}
-					/>
+					<div className="step__component custom__scrollbar">
+						<SuccessPage
+							setData={setMultiFormData}
+							data={multiStepFormData}
+							errors={errors}
+							currentStep={currentStep}
+							setCurrentStep={setCurrentStep}
+						/>
+					</div>
 				) : (
 					<>
 						<div className="step__component custom__scrollbar">
