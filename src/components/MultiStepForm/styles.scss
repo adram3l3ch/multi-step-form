@@ -10,7 +10,7 @@
 	overflow: hidden;
 
 	.steps {
-		padding: 3rem;
+		padding: 3rem 2rem;
 		border-radius: inherit;
 		background: url("../../assets/bg-sidebar-desktop.svg") no-repeat center / cover;
 		display: flex;
@@ -133,7 +133,7 @@
 			position: absolute;
 			width: 100%;
 			top: 0;
-			height: 250px;
+			height: 16rem;
 			z-index: -1;
 
 			.step:first-child {
@@ -149,7 +149,7 @@
 		}
 
 		.content {
-			margin-top: 120px;
+			margin-top: 8rem;
 			padding: 0;
 			.step__component {
 				padding: 2rem;
@@ -168,7 +168,7 @@
 	}
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
 	.multiStepForm {
 		.content .step__component {
 			margin-inline: 0.5rem;

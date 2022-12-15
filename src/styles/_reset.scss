@@ -58,6 +58,11 @@ button {
 	cursor: pointer;
 	background: none;
 	color: var(--neutral-400);
+	transition: filter 0.2s ease-in-out;
+
+	&:hover {
+		filter: brightness(1.5);
+	}
 }
 
 .custom__scrollbar::-webkit-scrollbar {
@@ -70,4 +75,10 @@ button {
 
 .custom__scrollbar::-webkit-scrollbar-thumb {
 	background-color: var(--neutral-400);
+}
+
+@media (max-width: 450px) {
+	:root {
+		font-size: clamp(5px, 4vw, 15px);
+	}
 }
